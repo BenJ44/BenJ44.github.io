@@ -1,0 +1,292 @@
+/* ---- Branding Navbar ---- */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+.brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-transform: uppercase;
+}
+
+.navbar-logo {
+    height: 28px; /* ajuste si besoin */
+    width: auto;
+}
+
+.brand-text {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: #A91418 !important;
+    letter-spacing: 1px;
+}
+
+/* Sur mobile, recentrer */
+@media (max-width: 768px) {
+    .navbar-logo {
+        height: 24px;
+    }
+
+    .brand-text {
+        font-size: 0.8rem;
+        letter-spacing: 0.5px;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    padding-top: 3.25rem;
+}
+
+.section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+.section-portfolio {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+.section.is-alt {
+    background: #edcbce;
+}
+
+.section.is-alt2 {
+    background: #fef4f5;
+}
+
+/* HERO FULL IMAGE */
+.hero-acceuil-header {
+    position: relative;
+}
+
+.full-header-img {
+    width: 100%;
+    overflow: hidden;
+}
+
+/* L'image garde son ratio, prend toute la largeur, mais pas 100% de la hauteur de l'écran */
+/* 👉 seule modif : on ajoute picture ici */
+.full-header-img picture,
+.full-header-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* TEXT BLOCK */
+/* --- Desktop version (positioned over the image) --- */
+.hero-text-block {
+    position: absolute;
+    top: 50%;
+    right: 5%;
+    transform: translateY(-50%);
+    text-align: right;
+    max-width: 500px;
+    color: white;
+    font-weight: 300;
+    line-height: 1.4;
+}
+
+.hero-title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: white;
+    text-shadow: 0px 3px 3px rgba(0,0,0,0.4);
+}
+
+/* --- MOBILE: texte sous l’image --- */
+@media (max-width: 768px) {
+
+    .full-header-img {
+        position: relative;
+    }
+
+    .hero-text-block {
+        position: static;    /* ❗ change: no absolute */
+        transform: none;
+        text-align: center;
+        margin: 20px auto 40px;
+        padding: 0 20px;
+        max-width: 90%;
+        color: #A91418; /* on bascule en rouge pour lisibilité */
+    }
+
+    .hero-title {
+        font-size: 1.4rem;
+        color: #A91418 !important;
+    }
+
+    .hero-text-block .button {
+        width: 100%;
+        max-width: 260px;
+        margin: 20px auto 0;
+    }
+}
+
+/* ---- NAVBAR LINKS FONT ---- */
+
+.navbar-item {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+/* active state */
+.navbar-item.is-active {
+    color: #A91418 !important;
+    font-weight: 600;
+}
+
+/* hover */
+.navbar-item:hover {
+    color: #A91418 !important;
+}
+
+.navbar.is-transparent-on-top {
+    transition: box-shadow 0.25s ease, background-color 0.25s ease;
+}
+
+.navbar.is-scrolled {
+    box-shadow: 0 2px 6px rgba(252, 192, 197);
+    background-color: #fef4f5;
+}
+
+/* Mobile optimisation */
+@media (max-width: 768px) {
+    .hero-acceuil {
+        text-align: center;
+    }
+
+    .buttons {
+        justify-content: center;
+    }
+}
+
+.testimonial-card {
+    height: 100%;
+    display: flex;
+    align-items: stretch;
+}
+
+.testimonial-card .card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.testimonial-quote {
+    margin-top: 1rem;
+    font-style: italic;
+}
+
+.testimonial-name {
+    margin-top: 0.75rem;
+    font-weight: 600;
+    opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+    .testimonial-card {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Colonnes prestations : même hauteur pour les cartes */
+.prestations-columns .column {
+    display: flex;
+}
+
+.prestation-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+.prestation-card .card-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.prest-text {
+    margin-bottom: .75rem;
+    opacity: .85;
+    line-height: 1.5;
+}
+
+.prest-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: .5rem;
+    color: #485fc7;
+}
+
+.prest-meta {
+    margin-top: auto; /* pousse la meta + prix vers le bas */
+    font-weight: 500;
+    color: #363636;
+    margin-bottom: .5rem;
+}
+
+.prest-price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #a91418; /* ta couleur principale */
+}
+
+/* Hover */
+.prestation-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.08);
+}
+
+.button.is-primary {
+    background-color: #a91418 !important;
+    border-color: #a91418 !important;
+    color: #fff !important;
+}
+
+/* Hover */
+.button.is-primary:hover,
+.button.is-primary:focus {
+    background-color: #8b1014 !important;
+    border-color: #8b1014 !important;
+}
+
+/* ---------- FOOTER PERSONNALISÉ ---------- */
+
+.custom-footer {
+    background: #f8f8f8;
+    padding: 2.5rem 1.5rem;
+    margin-top: 3rem;
+    border-top: 2px solid rgba(169, 20, 24, 0.15);
+}
+
+.footer-line {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    color: #A91418;
+    margin-bottom: 4px;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+
+.footer-year {
+    margin-top: 1rem;
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.85rem;
+    color: #777;
+}
+
+.custom-footer {
+    background: linear-gradient(to bottom, #ffffff, #fdecee);
+}
